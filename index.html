@@ -21,13 +21,24 @@
     </script>
     <script src="./qixi/qixi_files/jszip.min.js"></script>
 </head>
-<body init="true">Chúc cậu một ngày lễ Thất Tịch thật ngọt ngào và tràn đầy hạnh phúc.<br>
-Dù chúng ta chưa thật sự gần gũi, nhưng tớ luôn trân trọng<br>
-mỗi khoảnh khắc được gặp cậu. Cậu là người khiến trái tim tớ<br>
-đập nhanh hơn mỗi khi nhìn thấy cậu. Hy vọng một ngày nào đó,<br>
-tớ có thể là người đứng bên cạnh cậu, chia sẻ những khoảnh khắc<br>
-tuyệt vời của cuộc sống này. ❤</div>
+<body init="true">
 
+<div id="img_music_wap" onclick="music_switch()">
+    <img id="img_music" src="./letter/images/ico_music.png" style="width:100%">
+    <audio id="audio_music" src="./media/bgm.mp3" loop="loop"></audio>
+</div>
+
+<div id="entryScreen">
+    <div id="entryText">Chạm để đến với đêm Thất Tịch</div>
+    <div id="entryHint">Chạm nhẹ vào màn hình để bắt đầu</div>
+    <div class="stars" id="starsContainer"></div>
+</div>
+<div id="sceneContainer"></div>
+
+
+
+<!-- Lời chúc dựng bằng chữ 3D cạnh trái tim (4 dòng) -->
+<div id="content" style="display:none;">Chúc cậu một ngày lễ Thất Tịch thật ngọt ngào và tràn đầy hạnh phúc.<br>Dù chúng ta chưa thật sự gần gũi, nhưng tớ luôn trân trọng<br>mỗi khoảnh khắc được gặp cậu. Cậu là người khiến trái tim tớ<br>đập nhanh hơn mỗi khi nhìn thấy cậu. Hy vọng một ngày nào đó,<br>tớ có thể là người đứng bên cạnh cậu, chia sẻ những khoảnh khắc<br>tuyệt vời của cuộc sống này. ❤</div>
 <script src="./vendor/jquery-2.0.3.min.js"></script>
 <script>
     // Dữ liệu tĩnh (bản gốc lấy từ API love.layzz.cn, ở đây nhúng sẵn)
