@@ -115,3 +115,83 @@
 <script src="./qixi/qixi_files/love.js" type="module"></script>
 </body>
 </html>
+
+
+<!-- Lời chúc dựng bằng chữ 3D cạnh trái tim (4 dòng) -->
+<div id="content" style="display:none;">Chúc cậu một ngày lễ Thất Tịch thật ngọt ngào và tràn đầy hạnh phúc.<br>Dù chúng ta chưa thật sự gần gũi, nhưng tớ luôn trân trọng<br>mỗi khoảnh khắc được gặp cậu. Cậu là người khiến trái tim tớ<br>đập nhanh hơn mỗi khi nhìn thấy cậu. Hy vọng một ngày nào đó,<br>tớ có thể là người đứng bên cạnh cậu, chia sẻ những khoảnh khắc<br>tuyệt vời của cuộc sống này. ❤</div>
+<script src="./vendor/jquery-2.0.3.min.js"></script>
+<script>
+    // Dữ liệu tĩnh (bản gốc lấy từ API love.layzz.cn, ở đây nhúng sẵn)
+    var tempRes = {
+        data: {
+            mainTitle: "Tớ có một bí mật",
+            content: "Tớ thích cậu rất nhiều ❤️",
+            title: "💕",
+            pageType: 27,
+            music: "./media/bgm.mp3"
+        }
+    };
+    $('#entryText').html(tempRes.data.mainTitle);
+</script>
+<script>
+    var textArr = $("#content").html().split("<br>");
+    window._textLines = textArr.map(function (t) { return t.trim(); }).filter(Boolean);
+    if (textArr.length < 2) { textArr[1] = ''; }
+    if (textArr.length < 1) { textArr[0] = ''; }
+    const text1 = textArr[0].trim();
+    const text2 = textArr[1].trim();
+
+    function createStars() {
+        const container = document.getElementById("starsContainer");
+        const starCount = 100;
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            container.appendChild(star);
+        }
+    }
+    createStars();
+
+    function music_switch() {
+        var audio = document.getElementById('audio_music');
+        var img = document.getElementById('img_music');
+        if (audio.paused) {
+            audio.play();
+            img.style.webkitAnimation = "music_play_rotate 1s linear infinite";
+            img.style.animation = "music_play_rotate 1s linear infinite";
+        } else {
+            audio.pause();
+            img.style.webkitAnimation = "";
+            img.style.animation = "";
+        }
+    }
+    function music_play() {
+        var audio = document.getElementById('audio_music');
+        var img = document.getElementById('img_music');
+        if (audio.paused) {
+            audio.play();
+            img.style.webkitAnimation = "music_play_rotate 1s linear infinite";
+            img.style.animation = "music_play_rotate 1s linear infinite";
+        }
+    }
+    window.music_play = music_play;
+
+    document.getElementById("entryScreen").addEventListener("click", function () {
+        music_play();
+        this.style.opacity = 0;
+        document.getElementById("sceneContainer").style.opacity = 1;
+        setTimeout(() => {
+            this.style.display = "none";
+            startBirthdayScene();
+        }, 600);
+    });
+</script>
+<script src="./qixi/qixi_files/love.js" type="module"></script>
+</body>
+</html>
