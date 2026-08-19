@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="Zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="renderer" content="webkit">
+<title>404页面-当前页面不存在</title>
+<style>body {margin: 0;padding: 0;overflow: hidden;height: 100vh;-webkit-text-size-adjust: 100% !important;text-size-adjust: 100% !important;-moz-text-size-adjust: 100% !important;}
+</style>
+</head>
+<body>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+<img src="https://pic4.zhimg.com/v2-5b97d24bce8af8056b011ae8a5557aa1_r.jpg" style="width:90%; max-width: 500px;"/>
+<h2 style="font-size: 21px;color: #333333;text-align: center;letter-spacing: 5px;padding-top: 16px;">小笨蛋，当前页面失效啦～</h2>
+<div style="text-align:center; margin-top:60px;">
+<a id="new" style="padding:12px 24px;background:#409EFF;color:#fff;text-decoration:none;border-radius:8px;font-size:14px;">返回首页</a>
+</div>
+</div>
+<script>
+
+const link = document.getElementById('new');
+if (link) link.href = 'http://new.best22.cn/maps#404-' + getMMDDHHmm();
+
+function getMMDDHHmm() {
+  const date = new Date(); // 获取当前时间
+  const hour = String(date.getHours()).padStart(2, '0'); // 小时（00-23），补零
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份（01-12），补零
+  const day = String(date.getDate()).padStart(2, '0'); // 日期（01-31），补零
+  const minute = String(date.getMinutes()).padStart(2, '0'); // 分钟（00-59）
+  
+  // 拼接格式：小时 + 月份 + 日期 → HHMMDD（6位字符串）
+  return month + day + hour + minute;
+}
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2c0b50bd82595c2962ec6815bb7d7598";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
